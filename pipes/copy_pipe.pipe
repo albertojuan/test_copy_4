@@ -1,0 +1,10 @@
+DESCRIPTION >
+    "Scheduled copy of analytics to copy_analytics"
+
+NODE copy_pipe_node
+SQL >
+    SELECT * FROM analytics
+
+TYPE COPY
+TARGET_DATASOURCE copy_analytics
+COPY_SCHEDULE 29 * * * *
